@@ -1,0 +1,78 @@
+{%extends 'layout.html'%}
+
+
+{% block body%}
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{ url_for('static',filename='img/home-bg.jpg')}}') ">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Admin Panel  </h1>
+            <span class="subheading"> Welcome  {{params['admin_user']}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
+            <h1>Actions</h1>
+            <br>
+
+            <a href="/edit/0"><button class="btn btn-primary"> Add a Post</button> </a>
+            <a href="/logout"><button class="btn btn-primary"> Logout</button> </a>
+
+
+            <hr>
+            <br>
+            <h1>Upload File</h1>
+
+
+            <form action="/uploader" method="post" enctype="multipart/form-data">
+                <input type="file" name="file1">
+                <br>
+                <br>
+                <button class="btn btn-primary" type="submit" name="submit">Upload</button>
+                <br>
+                <br>
+                <b >{{msg}} </b>
+            </form>
+
+
+            <hr>
+<h1>Edit Posts</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th>Sno</th>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for data in datas%}
+      <tr>
+        <td>{{data[0]}}</td>
+        <td>{{data[1]}}</td>
+        <td>{{data[6]}}</td>
+
+        <td><a href="/edit/{{data[0]}}"><button class="btn btn-primary">edit</button></a></td>
+          <td><a href="/delete/{{data[0]}}"><button class="btn btn-primary">delete</button></a></td>
+      </tr>
+    {% endfor %}
+
+    </tbody>
+  </table>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

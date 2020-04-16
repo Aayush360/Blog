@@ -1,0 +1,26 @@
+{
+  "params":
+{
+  "local_server": "True",
+  "local_host": "127.0.0.1",
+  "local_port": 3306,
+  "prod_host": "127.0.0.1",
+  "prod_port": 3306,
+  "local_db": "DB_flask",
+  "prod_db": "DB_flask",
+  "fb_url": "https://facebook.com",
+  "tw_url": "https://twitter.com",
+  "gh_url": "https://github.com",
+  "blog_name": "Aayush Blog",
+  "gmail_user": "paudelaayus@gmail.com",
+  "gmail_pass": "Sufflepassword123",
+  "no_of_post": 3,
+  "login_image":"bootstrap-solid.svg",
+  "admin_user": "aayush",
+  "admin_password": "helloagain",
+  "upload_location": "/Users/aabaran/PycharmProjects/flask_tutorial/static"
+
+
+
+}
+}
